@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/18 16:09:47 by rmatos            #+#    #+#             */
-/*   Updated: 2016/12/19 16:58:37 by rmatos           ###   ########.fr       */
+/*   Created: 2017/01/14 15:20:02 by rmatos            #+#    #+#             */
+/*   Updated: 2017/01/14 15:48:18 by rmatos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

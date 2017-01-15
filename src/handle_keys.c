@@ -1,26 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_keys.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmatos <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/13 19:25:45 by rmatos            #+#    #+#             */
+/*   Updated: 2017/01/13 19:26:46 by rmatos           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 #include "stdio.h"
 
-int 	jul_key(int keycode, t_env *env)
+int		jul_key(int keycode, t_env *env)
 {
-		if (keycode == 3)
-		{
-			if (env->jul->freeze)
-				env->jul->freeze = 0;
-			else
-				env->jul->freeze = 1;
-		}
-		if (keycode == 69)
-			env->jul->max += 10;
-		if (keycode == 78)
-			env->jul->max -= 10;
-		mlx_clear_window(env->mlx, env->jul->win);
-		jul_thread(env);
-		printf("keycode: %i\n", keycode);
-		return (0);
+	if (keycode == 3)
+	{
+		if (env->jul->freeze)
+			env->jul->freeze = 0;
+		else
+			env->jul->freeze = 1;
+	}
+	if (keycode == 69)
+		env->jul->max += 10;
+	if (keycode == 78)
+		env->jul->max -= 10;
+	mlx_clear_window(env->mlx, env->jul->win);
+	jul_thread(env);
+	printf("keycode: %i\n", keycode);
+	return (0);
 }
 
-int 	man_key(int keycode, t_env *env)
+int		man_key(int keycode, t_env *env)
 {
 	if (keycode == 69)
 		env->man->max += 10;
@@ -32,7 +44,7 @@ int 	man_key(int keycode, t_env *env)
 	return (0);
 }
 
-int 	tree_key(int keycode, t_env *env)
+int		tree_key(int keycode, t_env *env)
 {
 	if (keycode == 69 && env->tree->max <= 12)
 		env->tree->max += 1;
