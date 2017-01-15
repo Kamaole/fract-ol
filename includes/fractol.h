@@ -6,7 +6,7 @@
 /*   By: rmatos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 19:44:29 by rmatos            #+#    #+#             */
-/*   Updated: 2017/01/14 17:41:02 by rmatos           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:11:42 by rmatos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,9 @@ void			jul_thread(t_env *env);
 t_branch		*make_branch(int x, int y, int len, double rad);
 void			put_branch(t_env *env, t_branch *branch, int i, double start);
 int				get_color(int i);
+int				tree_expose(void *param);
+int				man_expose(void *param);
+int				jul_expose(void *param);
+void			make_hooks(t_env *env, int fractal);
 
 #endif

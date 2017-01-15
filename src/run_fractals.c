@@ -6,7 +6,7 @@
 /*   By: rmatos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 15:17:26 by rmatos            #+#    #+#             */
-/*   Updated: 2017/01/14 17:07:35 by rmatos           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:08:51 by rmatos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,24 +63,6 @@ void	run_fractals(char **argv)
 
 	fractal = what_fractal(argv);
 	env = make_env(1000, 1000, fractal);
-	if (fractal == 0)
-	{
-		mlx_mouse_hook(env->man->win, man_mouse, env);
-		mlx_key_hook(env->man->win, man_key, env);
-		man_thread(env);
-	}
-	if (fractal == 1)
-	{
-		mlx_mouse_hook(env->jul->win, jul_mouse, env);
-		mlx_key_hook(env->jul->win, jul_key, env);
-		mlx_hook(env->jul->win, 6, 0, handle_mouse_motion, env);
-		jul_thread(env);
-	}
-	if (fractal == 2)
-	{
-		mlx_mouse_hook(env->tree->win, tree_mouse, env);
-		mlx_key_hook(env->tree->win, tree_key, env);
-		tree(env);
-	}
+	make_hooks(env, fractal);
 	mlx_loop(env->mlx);
 }
